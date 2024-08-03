@@ -175,11 +175,16 @@ $(function(){
 			});
 		}
 		if ( $('.owl-single').length > 0 ) {
+			var auto = true;
+			if ($('.noauto').length > 0) {
+				auto = false;
+			}
+
 			var owl = $('.owl-single').owlCarousel({
 		    loop: true,
 		    autoHeight: true,
 		    margin: 0,
-		    autoplay: true,
+		    autoplay: auto,
 		    smartSpeed: 800,
 		    items: 1,
 		    nav: false,
@@ -217,7 +222,6 @@ $(function(){
 				$('.owl-total').text(event.item.count);
 			})
 		}
-
 	}
 	owlPlugin();
 
